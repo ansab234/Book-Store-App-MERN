@@ -12,6 +12,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 
+const URL = "https://book-store-app-mern.herokuapp.com/";
+
 const BookDetail = () => {
   const [inputs, setInputs] = useState();
   const id = useParams().id;
@@ -22,7 +24,7 @@ const BookDetail = () => {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:5000/books/${id}`)
+        .get(`${URL}books/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.book));
     };
@@ -41,7 +43,7 @@ const BookDetail = () => {
   };
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:5000/books/${id}`, {
+      .put(`${URL}books/${id}`, {
         name: String(inputs.name),
         author: String(inputs.author),
         description: String(inputs.description),

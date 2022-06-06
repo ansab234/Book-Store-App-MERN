@@ -4,6 +4,8 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Book.css";
 
+const URL = "https://book-store-app-mern.herokuapp.com/"
+
 const Book = (props) => {
   const { _id, name, author, description, price, image } = props.book;
 
@@ -11,7 +13,7 @@ const Book = (props) => {
 
   const deleteHandler = async () => {
     await axios
-      .delete(`http://localhost:5000/books/${_id}`)
+      .delete(`${URL}${_id}`)
       .then((res) => res.data)
       .then(() => history("/"))
       .then(() => history("/books"));

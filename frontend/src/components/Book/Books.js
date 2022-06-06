@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Book from "./Book";
 import "./Book.css";
-import Header from "../Header";
 
-const URL = "http://localhost:5000/books";
+const URL = "https://book-store-app-mern.herokuapp.com/books";
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);
