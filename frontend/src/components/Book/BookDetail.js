@@ -12,7 +12,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 
-const URL = "https://book-store-app-mern.herokuapp.com/";
+const URL = "https://book-store-app-mern.herokuapp.com/"; //    http://localhost:5000/books
+
 
 const BookDetail = () => {
   const [inputs, setInputs] = useState();
