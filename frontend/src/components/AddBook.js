@@ -12,6 +12,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MuiAlert from "@mui/material/Alert";
 
+const URL = "https://book-store-app-mern.herokuapp.com/books"; //    http://localhost:5000/books
+
 const AddBook = () => {
   const history = useNavigate();
   const [open, setOpen] = useState(false);
@@ -38,7 +40,7 @@ const AddBook = () => {
 
   const sendRequest = async () => {
     await axios
-      .post("http://localhost:5000/books", {
+      .post(`${URL}`, {
         name: String(inputs.name),
         author: String(inputs.author),
         description: String(inputs.description),
