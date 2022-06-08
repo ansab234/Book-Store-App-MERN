@@ -4,7 +4,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Book.css";
 
-const URL = "https://book-store-app-mern.herokuapp.com/books"
+const URL = "https://book-store-app-mern.herokuapp.com/books/"
 
 const Book = (props) => {
   const { _id, name, author, description, price, image } = props.book;
